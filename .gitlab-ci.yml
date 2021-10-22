@@ -1,9 +1,0 @@
-docker-build:
-  image: docker:latest
-  stage: build
-  services:
-    - docker
-  before_script:
-    - docker build -t realfakedoors/docker-react -f Dockerfile.dev .
-  script:
-    - docker run -e CI=true realfakedoors/docker-react npm run test -- --coverage
