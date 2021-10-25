@@ -4,19 +4,6 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    volumes:
-      - /app/node_modules
-      - .:/app
-  # an alternative to this separate testing service: 
-  # docker exec -it (container id) npm run test
-  # tests:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.dev
-  #   volumes:
-  #     - /app/node_modules
-  #     - .:/app
-  #   command: ["npm", "run", "test"]
+      - '80:80'
